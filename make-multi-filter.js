@@ -1,6 +1,6 @@
 'use strict';
 function MakeMultiFilter(originalArray) {
-const arrayFilterer = function (filterCriteria = undefined, callback = undefined){
+    const arrayFilterer = function (filterCriteria = undefined, callback = undefined){
     arrayFilterer.currentArray ??= originalArray;
     if (Array.isArray(originalArray)) {
             if ((typeof filterCriteria === "function")) {
