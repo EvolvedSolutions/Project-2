@@ -50,20 +50,28 @@ function arraysAreTheSame(a1, a2) {
 
 // ********************* Test MakeMultiFilter
 
+// Check if the result of MakeMultiFilter is actually a function
 if (typeof MakeMultiFilter !== 'function') {
+ 
   console.error('MakeMultiFilter is not a function', typeof MakeMultiFilter);
+ 
   messages.p1Message = 'FAILURE';
 } else {
+ 
   var originalArray = [1, 2, 3];
   var filterFunc = window.MakeMultiFilter(originalArray);
 
   var secondArray = [1, 2, 3, 4];
   var filterFuncTwo = window.MakeMultiFilter(secondArray);
-
+  
+  // Check if the result of MakeMultiFilter is actually a function
   if (typeof filterFunc !== 'function') {
+     // If filterFunc is not a function, log an error to the console
     console.error('MakeMultiFilter does not return a function', filterFunc);
+     // Update the message for Problem 1 to indicate failure
     messages.p1Message = 'FAILURE';
   } else {
+    // Call filterFunc with no arguments and store the result in `result`
     var result = filterFunc();
     if (!arraysAreTheSame([1, 2, 3], result)) {
       console.error('filter function with no args does not return the original array', result);
